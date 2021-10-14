@@ -2,6 +2,9 @@ import "./App.css";
 import React from "react";
 import { useState } from "react";
 
+//helpers
+import generateUnabigous from "./utils/generateUnabigous";
+
 function App() {
   const [value, setValue] = useState("");
 
@@ -37,7 +40,10 @@ function App() {
         result += generateUnabigous(str[3]);
         break;
       case 5:
-        break;
+        result += generateFourDigit(str.substr(0, 2));
+        result += " ";
+        result += generateCustomTwoDigit(str[2]);
+        result += generateUnabigous(str[3]);
     }
 
     //Unique cases
@@ -49,33 +55,6 @@ function App() {
     //   }
     // }
     return result;
-  }
-
-  //Ones function armenificatior
-  function generateUnabigous(input) {
-    const number = Number(input);
-    switch (number) {
-      case 0:
-        return "զրո";
-      case 1:
-        return "մեկ";
-      case 2:
-        return "երկու";
-      case 3:
-        return "երեք";
-      case 4:
-        return "չորս";
-      case 5:
-        return "հինգ";
-      case 6:
-        return "վեց";
-      case 7:
-        return "յոթ";
-      case 8:
-        return "ութ";
-      case 9:
-        return "ինը";
-    }
   }
 
   //Twos function armenificator
@@ -103,16 +82,14 @@ function App() {
     }
   }
 
-  function genereateTwoDigits(input, result) {
+  function genereateTwoDigits(input) {
     let number = Number(input);
     let uniques = [10, 20, 30, 40, 50, 60, 70, 80, 90];
     for (let i = 0; i < uniques.length; i++) {
       if (number === uniques[i]) {
         return generateUniqueTwoDigit(input);
       } else {
-        result += generateCustomTwoDigit(input[0]);
-        result += generateUnabigous(input[1]);
-        return result;
+        return generateCustomTwoDigit(input[0]);
       }
     }
   }
@@ -155,11 +132,18 @@ function App() {
   //Fours function armenificator
   function generateFourDigit(input) {
     const number = Number(input);
-
-    if (number === 1) {
-      return "հազար ";
-    } else {
-      return generateUnabigous(number) + " " + "հազար ";
+    console.log("input:", input);
+    switch (input.length) {
+      case 1:
+        if (number === 1) {
+          return "հազար ";
+        } else {
+          return generateUnabigous(number) + " " + "հազար ";
+        }
+      case 2:
+      // const result = "";
+      // result += genereateTwoDigits(number, result) + " " + "հազար ";
+      // return result;
     }
   }
 
