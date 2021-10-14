@@ -10,3 +10,12 @@ export default function generateThreeDigit(input) {
     return generateUnabigous(number) + " " + "հարյուր ";
   }
 }
+
+// export function checkDigitEnding(input) {
+//   const ending = input.substr(1);
+//   if (ending === "00") {
+//     return generateUnabigous(number) + " " + "հարյուր ";
+//   } else {
+//     generateThreeDigit(input[0]);
+//   }
+// }
