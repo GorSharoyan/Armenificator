@@ -5,8 +5,9 @@ import { useState } from "react";
 //helpers
 import generateUnabigous from "./utils/1_generateUnabigous";
 import generateTwoDigits from "./utils/2_generateTwoDigits";
-import generateThreeDigit from "./utils/3_generateThreeDigits";
+import generateThreeDigit from "./utils/3_generateThreeDigit";
 import generateFourDigit from "./utils/4_generateFourDigit";
+import generateFiveDigit from "./utils/5_generateFiveDigit";
 
 function App() {
   const [value, setValue] = useState("");
@@ -31,12 +32,9 @@ function App() {
       case 4:
         return generateFourDigit(str);
       case 5:
-        result += generateFourDigit(str);
-        result += " ";
-        result += generateThreeDigit(str[1]);
-        result += " ";
-        result += generateTwoDigits(str[2]);
-        result += generateUnabigous(str[3]);
+        return generateFiveDigit(str);
+      case 6:
+        return "եղավ քեզ ազիզ ջան";
     }
 
     return result;

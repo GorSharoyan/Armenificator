@@ -1,6 +1,6 @@
 import generateUnabigous from "./1_generateUnabigous";
 import generateTwoDigits from "./2_generateTwoDigits";
-import generateThreeDigit from "./3_generateThreeDigits";
+import generateThreeDigit from "./3_generateThreeDigit";
 
 //Fours function armenificator
 export default function generateFourDigit(input) {
@@ -16,7 +16,14 @@ export default function generateFourDigit(input) {
     firstChar += "hազար";
   }
 
-  secondChar += generateThreeDigit(input.substr(1, 3));
+  if (input.substr(1, 3) !== "000") {
+    if (input[1] === "0") {
+      secondChar += " ";
+      secondChar += generateTwoDigits(input.substr(2, 3));
+    } else {
+      secondChar += generateThreeDigit(input.substr(1, 3));
+    }
+  }
 
   result += firstChar;
   result += secondChar;
