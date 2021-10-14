@@ -1,21 +1,25 @@
 import generateUnabigous from "./1_generateUnabigous";
+import generateTwoDigits from "./2_generateTwoDigits";
 
 //Threes function armenificator
 export default function generateThreeDigit(input) {
-  const number = Number(input);
+  let result = "";
+  let firstChar = "";
+  let secondChar = "";
 
-  if (number === 1) {
-    return "հարյուր ";
+  if (generateUnabigous(input[0]) === "մեկ") {
+    firstChar += "հարյուր";
   } else {
-    return generateUnabigous(number) + " " + "հարյուր ";
+    firstChar += generateUnabigous(input[0]);
+    firstChar += " ";
+    firstChar += "հարյուր";
   }
-}
 
-// export function checkDigitEnding(input) {
-//   const ending = input.substr(1);
-//   if (ending === "00") {
-//     return generateUnabigous(number) + " " + "հարյուր ";
-//   } else {
-//     generateThreeDigit(input[0]);
-//   }
-// }
+  if (input.substr(1, 2) !== "00") {
+    secondChar += generateTwoDigits(input.substr(1, 2));
+  }
+
+  result += firstChar;
+  result += secondChar;
+  return result;
+}

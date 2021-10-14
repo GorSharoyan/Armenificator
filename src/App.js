@@ -27,11 +27,7 @@ function App() {
       case 2:
         return generateTwoDigits(str);
       case 3:
-        result += generateThreeDigit(str[0]);
-        result += " ";
-        result += generateTwoDigits(str[1]);
-        result += generateUnabigous(str[2]);
-        break;
+        return generateThreeDigit(str);
       case 4:
         result += generateFourDigit(str);
         result += " ";
