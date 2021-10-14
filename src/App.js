@@ -6,6 +6,7 @@ import { useState } from "react";
 import generateUnabigous from "./utils/1_generateUnabigous";
 import generateTwoDigits from "./utils/2_generateTwoDigits";
 import generateThreeDigit from "./utils/3_generateThreeDigits";
+import generateFourDigit from "./utils/4_generateFourDigit";
 
 function App() {
   const [value, setValue] = useState("");
@@ -34,47 +35,23 @@ function App() {
         result += generateUnabigous(str[2]);
         break;
       case 4:
-        result += generateFourDigit(str[0]);
+        result += generateFourDigit(str);
         result += " ";
         result += generateThreeDigit(str[1]);
         result += " ";
-        //result += generateCustomTwoDigit(str[2]);
-        //result += generateUnabigous(str[3]);
+        result += generateTwoDigits(str[2]);
+        result += generateUnabigous(str[3]);
         break;
       case 5:
-        result += generateFourDigit(str.substr(0, 2));
+        result += generateFourDigit(str);
         result += " ";
-        //result += generateCustomTwoDigit(str[2]);
+        result += generateThreeDigit(str[1]);
+        result += " ";
+        result += generateTwoDigits(str[2]);
         result += generateUnabigous(str[3]);
     }
 
-    //Unique cases
-    // for (let i = 0; i < uniques.length; i++) {
-    //   if (result === uniques[i]) {
-    //     generateUniqueNumber(result);
-    //   } else {
-    //     return result;
-    //   }
-    // }
     return result;
-  }
-
-  //Fours function armenificator
-  function generateFourDigit(input) {
-    const number = Number(input);
-    console.log("input:", input);
-    switch (input.length) {
-      case 1:
-        if (number === 1) {
-          return "հազար ";
-        } else {
-          return generateUnabigous(number) + " " + "հազար ";
-        }
-      case 2:
-      // const result = "";
-      // result += genereateTwoDigits(number, result) + " " + "հազար ";
-      // return result;
-    }
   }
 
   return (
