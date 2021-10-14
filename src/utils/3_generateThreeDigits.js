@@ -5,7 +5,7 @@ import generateTwoDigits from "./2_generateTwoDigits";
 export default function generateThreeDigit(input) {
   let result = "";
   let firstChar = "";
-  let secondChar = "";
+  let secondChar = " ";
 
   if (generateUnabigous(input[0]) === "մեկ") {
     firstChar += "հարյուր";

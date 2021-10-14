@@ -29,13 +29,7 @@ function App() {
       case 3:
         return generateThreeDigit(str);
       case 4:
-        result += generateFourDigit(str);
-        result += " ";
-        result += generateThreeDigit(str[1]);
-        result += " ";
-        result += generateTwoDigits(str[2]);
-        result += generateUnabigous(str[3]);
-        break;
+        return generateFourDigit(str);
       case 5:
         result += generateFourDigit(str);
         result += " ";
