@@ -9,6 +9,7 @@ import generateThreeDigit from "./utils/3_generateThreeDigit";
 import generateFourDigit from "./utils/4_generateFourDigit";
 import generateFiveDigit from "./utils/5_generateFiveDigit";
 import generateSixDigit from "./utils/6_gnereateSixDigit";
+import generateSevenDigit from "./utils/7_generateSevenDigit";
 
 function App() {
   const [value, setValue] = useState("");
@@ -35,6 +36,8 @@ function App() {
         return generateFiveDigit(str);
       case 6:
         return generateSixDigit(str);
+      case 7:
+        return generateSevenDigit(str);
     }
   }
 

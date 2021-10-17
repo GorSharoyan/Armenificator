@@ -1,9 +1,7 @@
 //Fives  function armenificator
 
-import generateUnabigous from "./1_generateUnabigous";
 import generateTwoDigits from "./2_generateTwoDigits";
 import generateThreeDigit from "./3_generateThreeDigit";
-import generateFourDigit from "./4_generateFourDigit";
 
 export default function generateFiveDigit(input) {
   let result = "";
