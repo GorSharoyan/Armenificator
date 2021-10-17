@@ -7,16 +7,26 @@ export default function generateThreeDigit(input) {
   let firstChar = "";
   let secondChar = " ";
 
-  if (generateUnabigous(input[0]) === "մեկ") {
-    firstChar += "հարյուր";
-  } else {
-    firstChar += generateUnabigous(input[0]);
-    firstChar += " ";
-    firstChar += "հարյուր";
+  switch (input[0]) {
+    case "0":
+      firstChar += " ";
+      break;
+    case "1":
+      firstChar += "հարյուր";
+      break;
+    default:
+      firstChar += generateUnabigous(input[0]);
+      firstChar += " ";
+      firstChar += "հարյուր";
+      break;
   }
 
   if (input.substr(1, 2) !== "00") {
-    secondChar += generateTwoDigits(input.substr(1, 2));
+    if (input[1] === "0") {
+      secondChar += generateUnabigous(input[2]);
+    } else {
+      secondChar += generateTwoDigits(input.substr(1, 2));
+    }
   }
 
   result += firstChar;

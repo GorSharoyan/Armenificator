@@ -13,7 +13,6 @@ export default function generateSixDigit(input) {
   firstChar += "հազար";
   firstChar += " ";
 
-  console.log(input.substr(4, 5));
   if (input.substr(3, 5) !== "000") {
     if (input[3] === "0") {
       secondChar += generateTwoDigits(input.substr(4, 5));
