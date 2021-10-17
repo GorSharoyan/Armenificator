@@ -1,6 +1,5 @@
 //Nine digit armenificatior function
 
-import generateTwoDigits from "./2_generateTwoDigits";
 import generateThreeDigit from "./3_generateThreeDigit";
 import generateSixDigit from "./6_gnereateSixDigit";
 

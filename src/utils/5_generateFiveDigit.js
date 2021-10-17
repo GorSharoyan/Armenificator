@@ -8,10 +8,16 @@ export default function generateFiveDigit(input) {
   let firstChar = "";
   let secondChar = " ";
 
-  firstChar += generateTwoDigits(input.substr(0, 2));
-  firstChar += " ";
-  firstChar += "հազար";
+  //first char generation
+  if (input[1] === "1") {
+    firstChar += "հազար";
+  } else {
+    firstChar += generateTwoDigits(input.substr(0, 2));
+    firstChar += " ";
+    firstChar += "հազար";
+  }
 
+  //second char generation
   if (input.substr(2, 4) !== "000") {
     if (input[2] === "0") {
       secondChar += generateTwoDigits(input.substr(3, 4));

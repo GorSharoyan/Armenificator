@@ -7,6 +7,7 @@ export default function generateSevenDigit(input) {
   let result = "";
   let firstChar = "";
   let secondChar = " ";
+
   //first char generation
   firstChar += generateUnabigous(input[0]);
   firstChar += " ";

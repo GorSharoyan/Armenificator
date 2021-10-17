@@ -7,10 +7,12 @@ export default function generateEigthDigit(input) {
   let result = "";
   let firstChar = "";
   let secondChar = " ";
+
   //first Char generation
   firstChar += generateTwoDigits(input.substr(0, 2));
   firstChar += " ";
   firstChar += "միլիոն";
+
   // second Char genreation
   secondChar += generateSixDigit(input.substr(2, 7));
 
