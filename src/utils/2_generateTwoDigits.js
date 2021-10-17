@@ -44,9 +44,7 @@ export default function generateTwoDigits(input) {
     }
 
     //SecondChar generation
-    if (generateUnabigous(input[1]) === "զրո") {
-      secondChar += "";
-    } else {
+    if (generateUnabigous(input[1]) !== "զրո") {
       secondChar += generateUnabigous(input[1]);
     }
     //result concat
