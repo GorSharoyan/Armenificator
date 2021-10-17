@@ -8,6 +8,7 @@ import generateTwoDigits from "./utils/2_generateTwoDigits";
 import generateThreeDigit from "./utils/3_generateThreeDigit";
 import generateFourDigit from "./utils/4_generateFourDigit";
 import generateFiveDigit from "./utils/5_generateFiveDigit";
+import generateSixDigit from "./utils/6_gnereateSixDigit";
 
 function App() {
   const [value, setValue] = useState("");
@@ -21,7 +22,6 @@ function App() {
 
   //main armenification function
   function armenificate(str) {
-    let result = "";
     switch (str.length) {
       case 1:
         return generateUnabigous(str);
@@ -34,10 +34,8 @@ function App() {
       case 5:
         return generateFiveDigit(str);
       case 6:
-        return "եղավ քեզ ազիզ ջան";
+        return generateSixDigit(str);
     }
-
-    return result;
   }
 
   return (
