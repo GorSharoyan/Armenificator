@@ -1,19 +1,35 @@
 import React from "react";
 import { useState } from "react";
 
-//helpers
-import generateUnabigous from "../../utils/1_generateUnabigous";
-import generateTwoDigits from "../../utils/2_generateTwoDigits";
-import generateThreeDigit from "../../utils/3_generateThreeDigit";
-import generateFourDigit from "../../utils/4_generateFourDigit";
-import generateFiveDigit from "../../utils/5_generateFiveDigit";
-import generateSixDigit from "../../utils/6_gnereateSixDigit";
-import generateSevenDigit from "../../utils/7_generateSevenDigit";
-import generateEigthDigit from "../../utils/8_generateEigthDigit";
-import generateNineDigit from "../../utils/9_generateNineDigit";
+//services
+import armenificate from "../../services/armenificate.service";
+
+//assets
+import kaby from "../../assets/kaby.png";
+
+//UI
+import { TextField } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles({
+  input: {
+    padding: "5px",
+    borderRadius: "55px"
+  },
+  text: {
+    padding: "15px",
+    border: "1px solid black",
+    borderRadius: "34px",
+    height: "90px",
+    width: "800px",
+    textAlign: "baseline"
+  }
+});
 
 export default function Armenificator() {
   const [value, setValue] = useState("");
+  const classes = useStyles();
 
   //basic input change function
   const handleInputChange = (val) => {
@@ -22,38 +38,30 @@ export default function Armenificator() {
     setValue(armenificate(input));
   };
 
-  //main armenification function
-  function armenificate(str) {
-    switch (str.length) {
-      case 1:
-        return generateUnabigous(str);
-      case 2:
-        return generateTwoDigits(str);
-      case 3:
-        return generateThreeDigit(str);
-      case 4:
-        return generateFourDigit(str);
-      case 5:
-        return generateFiveDigit(str);
-      case 6:
-        return generateSixDigit(str);
-      case 7:
-        return generateSevenDigit(str);
-      case 8:
-        return generateEigthDigit(str);
-      case 9:
-        return generateNineDigit(str);
-    }
-  }
-
   return (
     <div>
-      <div className="App">
-        <input type="number" onChange={handleInputChange}></input>
-      </div>
-      <div>
-        <h1>{value}</h1>
-      </div>
+      <Grid
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <div>
+          <img height="350px" src={kaby} alt="Kaby_Lame" />
+        </div>
+        <div className={classes.input}>
+          <TextField
+            className={classes.input}
+            id="outlined-basic"
+            label="գրեք թիվը"
+            variant="outlined"
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className={classes.text}>
+          <h3>{value}</h3>
+        </div>
+      </Grid>
     </div>
   );
 }

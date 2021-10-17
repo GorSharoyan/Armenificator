@@ -8,6 +8,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    marginBottom: "2px",
     flexGrow: 1
   },
   menuButton: {
