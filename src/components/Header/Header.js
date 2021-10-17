@@ -5,11 +5,6 @@ import { makeStyles } from "@material-ui/core/styles";
 //UI
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-
-//components
-import Navbar from "../Navbar/Navbar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,11 +24,7 @@ export default function Header() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar>
-          <Navbar />
-          <Typography variant="h6" className={classes.title}></Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
+        <Toolbar></Toolbar>
       </AppBar>
     </div>
   );
