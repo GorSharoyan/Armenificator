@@ -3,11 +3,16 @@ import generateUnabigous from "./1_generateUnabigous";
 //Twos function armenificator
 export default function generateTwoDigits(input) {
   const number = Number(input[0]);
-  console.log(input);
+
   //char&result declaration
   let result = "";
   let firstChar = "";
   let secondChar = "";
+
+  if (input[0] === "0") {
+    result += generateUnabigous(input[1]);
+    return result;
+  }
 
   //firstChar generation
   if (input === "10") {
@@ -45,7 +50,7 @@ export default function generateTwoDigits(input) {
 
     //SecondChar generation
 
-    if (input[1] !== "0" && input[1] !== "1") {
+    if (input[1] !== "0") {
       secondChar += generateUnabigous(input[1]);
     }
     //result concat

@@ -11,6 +11,7 @@ export default function generateFiveDigit(input) {
   firstChar += generateTwoDigits(input.substr(0, 2));
   firstChar += " ";
   firstChar += "հազար";
+  firstChar += " ";
 
   if (input.substr(2, 4) !== "000") {
     if (input[2] === "0") {

@@ -6,7 +6,7 @@ import generateThreeDigit from "./3_generateThreeDigit";
 export default function generateFourDigit(input) {
   let result = "";
   let firstChar = "";
-  let secondChar = " ";
+  let secondChar = "";
 
   if (input[0] === "1") {
     firstChar += "հազար";
@@ -14,11 +14,11 @@ export default function generateFourDigit(input) {
     firstChar += generateUnabigous(input[0]);
     firstChar += " ";
     firstChar += "hազար";
+    firstChar += " ";
   }
 
   if (input.substr(1, 3) !== "000") {
     if (input[1] === "0") {
-      secondChar += " ";
       secondChar += generateTwoDigits(input.substr(2, 3));
     } else {
       secondChar += generateThreeDigit(input.substr(1, 3));
