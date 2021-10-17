@@ -32,6 +32,6 @@ export default function armenificate(str) {
     case 9:
       return generateNineDigit(str);
     default:
-      return "ետ մի բաննել ձեռով արա )))";
+      return "Էտ մի բաննել ձեռով արա )))";
   }
 }

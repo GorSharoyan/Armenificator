@@ -53,7 +53,7 @@ export default function Armenificator() {
           <TextField
             className={classes.input}
             id="outlined-basic"
-            label="գրեք թիվը"
+            label="մուտքագրեք թիվը"
             variant="outlined"
             onChange={handleInputChange}
           />
