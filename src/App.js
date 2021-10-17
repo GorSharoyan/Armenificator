@@ -11,6 +11,7 @@ import generateFiveDigit from "./utils/5_generateFiveDigit";
 import generateSixDigit from "./utils/6_gnereateSixDigit";
 import generateSevenDigit from "./utils/7_generateSevenDigit";
 import generateEigthDigit from "./utils/8_generateEigthDigit";
+import generateNineDigit from "./utils/9_generateNineDigit";
 
 function App() {
   const [value, setValue] = useState("");
@@ -41,6 +42,8 @@ function App() {
         return generateSevenDigit(str);
       case 8:
         return generateEigthDigit(str);
+      case 9:
+        return generateNineDigit(str);
     }
   }
 
