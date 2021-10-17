@@ -6,7 +6,6 @@ export default function generateThreeDigit(input) {
   let result = "";
   let firstChar = "";
   let secondChar = " ";
-  console.log("here");
 
   if (input === "000") {
     return result;
@@ -14,7 +13,7 @@ export default function generateThreeDigit(input) {
     switch (input[0]) {
       case "0":
         firstChar += " ";
-        console.log("0 debugged");
+
         break;
       case "1":
         firstChar += "հարյուր";
@@ -23,7 +22,7 @@ export default function generateThreeDigit(input) {
         firstChar += generateUnabigous(input[0]);
         firstChar += " ";
         firstChar += "հարյուր";
-        console.log("default debugged");
+
         break;
     }
 

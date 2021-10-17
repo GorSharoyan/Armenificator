@@ -7,12 +7,13 @@ export default function generateSixDigit(input) {
   let result = "";
   let firstChar = "";
   let secondChar = " ";
-
-  firstChar += generateThreeDigit(input.substr(0, 3));
-  firstChar += " ";
-  firstChar += "հազար";
-  firstChar += " ";
-
+  //first char generation
+  if (input.substr(0, 3) !== "000") {
+    firstChar += generateThreeDigit(input.substr(0, 3));
+    firstChar += " ";
+    firstChar += "հազար";
+  }
+  //second char generation
   if (input.substr(3, 5) !== "000") {
     if (input[3] === "0") {
       secondChar += generateTwoDigits(input.substr(4, 5));
