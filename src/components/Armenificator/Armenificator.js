@@ -59,7 +59,7 @@ export default function Armenificator() {
           />
         </div>
         <div className={classes.text}>
-          <h3>{value}</h3>
+          <p>{value}</p>
         </div>
       </Grid>
     </div>
