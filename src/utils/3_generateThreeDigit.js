@@ -13,7 +13,6 @@ export default function generateThreeDigit(input) {
     switch (input[0]) {
       case "0":
         firstChar += " ";
-
         break;
       case "1":
         firstChar += "հարյուր";
@@ -22,7 +21,6 @@ export default function generateThreeDigit(input) {
         firstChar += generateUnabigous(input[0]);
         firstChar += " ";
         firstChar += "հարյուր";
-
         break;
     }
 

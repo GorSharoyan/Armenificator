@@ -55,6 +55,7 @@ export default function Armenificator() {
             id="outlined-basic"
             label="մուտքագրեք թիվը"
             variant="outlined"
+            type="number"
             onChange={handleInputChange}
           />
         </div>
