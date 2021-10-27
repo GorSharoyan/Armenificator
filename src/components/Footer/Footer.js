@@ -30,6 +30,7 @@ export default function Footer() {
       justify="space-between"
       alignItems="flex-end"
     >
+      <div className={classes.container}>© Автор идеи:Hasmik Khachatryan</div>
       <div className={classes.container}>© Gor Sharoyan 2021 Beta</div>
       <div className={classes.container}>gor.sharoyan95@gmail.com</div>
     </Grid>
